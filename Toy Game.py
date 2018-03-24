@@ -1,7 +1,7 @@
 import random as rn
 import pprint
 pp = pprint.PrettyPrinter()
-n = 10
+n = 5
 def star(x):
 	return "*"
 def row(x):
@@ -27,21 +27,26 @@ pp.pprint(m)
 
 def up():
 	global ni
-	ni+=1
+	ni-=1
 def down():
 	global ni
-	ni-=1
+	ni+=1
 def left():
 	global nj
-	nj+=1
+	nj-=1
 def right():
 	global nj
-	nj-=1
+	nj+=1
 
 code = input("Your code here:").split(";")
 for c in code:
 	exec(c)
+	#m[ni][nj]="d"
+	#pp.pprint(m)
+
+#print(ni," ",nj)
+#print(i," ",j)
 if (ni==i) and (nj==j):
 	print("You've won")
 else:
-	print("You've lost")
+	print("You've lost")		
