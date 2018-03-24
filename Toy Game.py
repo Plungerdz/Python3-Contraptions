@@ -1,6 +1,17 @@
-import random as rn
-m = [["*","*","*"],["*","*","*"],["*","*","*"]]
-indices=list(range(2))
+
+import random as 
+import pprint
+pp = pprint.PrettyPrinter()
+n = 10
+def star(x):
+	return "*"
+def row(x):
+	global n
+	return [star(i) for i in range(n)]
+m = [row(i) for i in range(n)] #[["*","*","*"],["*","*","*"],["*","*","*"]]
+#print(m)
+pp.pprint(m)
+indices=list(range(n))
 i = rn.choice(indices)
 j = rn.choice(indices)
 m[i][j]="@"
@@ -11,7 +22,10 @@ nj = rn.choice(indices)
 while nj==j:
 	nj = rn.choice(indices)
 m[ni][nj]="#"
-print(m)
+#print(m)
+print("\n")
+pp.pprint(m)
+
 def up():
 	global ni
 	ni+=1
@@ -27,7 +41,7 @@ def right():
 
 code = input("Your code here:").split(";")
 for c in code:
-	eval(c)
+	exec(c)
 if (ni==i) and (nj==j):
 	print("You've won")
 else:
