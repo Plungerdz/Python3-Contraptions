@@ -1,5 +1,5 @@
 
-import random as 
+import random as rn
 import pprint
 pp = pprint.PrettyPrinter()
 n = 10
